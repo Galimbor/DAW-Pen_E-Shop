@@ -1,0 +1,207 @@
+{% extends 'base.html.twig' %}
+
+    {% block indexCategories %}
+        <div class="col-lg-3">
+            <div class="all-category">
+                <h3 class="cat-heading dropdown">
+                    <i class="fa fa-bars" aria-hidden="true"></i>Featured Brand's
+                </h3>
+                <ul class="main-category ">
+                    <li><a href="{{ path('store') }}">Parker</a></li>
+                    <li><a href="{{ path('store') }}">Cross</a></li>
+                    <li><a href="{{ path('store') }}">Kingley</a></li>
+                    <li><a href="{{ path('store') }}">Lamy</a></li>
+                </ul>
+            </div>
+        </div>
+    {% endblock %}
+
+	{% block body %}
+        <!-- Slider Area -->
+        <section class="hero-slider">
+            <!-- Single Slider -->
+            <div class="single-slider">
+                <div class="container">
+                    <div class="row no-gutters">
+                        <div class="col-lg-9 offset-lg-3 col-12">
+                            <div class="text-inner">
+                                <div class="row">
+                                    <div class="col-lg-7 col-12">
+                                        <div class="hero-text">
+                                            <h1><span>ONLY 50 LEFT</span>Cross Delgato XI</h1>
+                                            <div class="button">
+                                                <a href="{{ path('store') }}" class="btn">Shop Now!</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--/ End Single Slider -->
+        </section>
+        <!--/ End Slider Area -->
+
+        <!-- Start Small Banner  -->
+        <section class="small-banner section">
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- Single Banner  -->
+                    <div class="col-lg-4 col-md-6 col-12">
+                        <div class="single-banner">
+                            <img src="{{ asset('images/smallthumbnails/1.jpg') }}" alt="smallthumbnail1">
+                            <div class="content">
+                                <p>Parker's Winter</p>
+                                <h3> Liongate <br> collection </h3>
+                                <a class="" href="{{ path('store') }}">Discover Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /End Single Banner  -->
+                    <!-- Single Banner  -->
+                    <div class="col-lg-4 col-md-6 col-12">
+                        <div class="single-banner">
+                            <img src="{{ asset('images/smallthumbnails/2.jpg') }}" alt="smallthumbnail2">
+                            <div class="content">
+                                <p>Cross's New</p>
+                                <h3>Classic 10KT Gold <br> 2020</h3>
+                                <a href="{{ path('store') }}">Shop Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /End Single Banner  -->
+                    <!-- Single Banner  -->
+                    <div class="col-lg-4 col-12">
+                        <div class="single-banner tab-height">
+                            <img src="{{ asset('images/smallthumbnails/3.png') }}" alt="smallthumbnail3">
+                            <div class="content">
+                                <p>Kinsgley's Luxurious Line</p>
+                                <h3><span>Diberto <br> Collection </span></h3>
+                                <a href="{{ path('store') }}">Discover Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /End Single Banner  -->
+                </div>
+            </div>
+        </section>
+        <!-- End Small Banner -->
+
+        <!-- Start Middle Title -->
+        <div class=" mt-5 row">
+            <div class="col-12">
+                <div class="section-title">
+                    <h2>Current collection's discounts</h2>
+                </div>
+            </div>
+        </div>
+        <!-- End Middle Title -->
+
+
+        <!-- Start Medium Banner  -->
+        <section class="midium-banner">
+            <div class="container">
+                <div class="row">
+                    <!-- Single Banner  -->
+                    <div class="col-lg-6 col-md-6 col-12">
+                        <div class="single-banner">
+                            <img src="{{ asset('images/mediumthumbnails/1.jpg') }}" alt="mediumthumbnail1">
+                            <div class="content ">
+                                <p>Lamy's Safari Collection</p>
+                                <h3><span> 50% OFF </span></h3>
+                                <a href="{{ path('store') }}">Shop Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /End Single Banner  -->
+                    <!-- Single Banner  -->
+                    <div class="col-lg-6 col-md-6 col-12">
+                        <div class="single-banner">
+                            <img src="{{ asset('images/mediumthumbnails/2.jpg') }}" alt="mediumthumbnail2">
+                            <div class="content">
+                                <p>Lamy's Genour Line</p>
+                                <h3><span>10% off</span></h3>
+                                <a href="{{ path('store') }}" class="btn">Shop Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /End Single Banner  -->
+                </div>
+            </div>
+        </section>
+        <!-- End Midium Banner -->
+
+
+
+
+        <!-- Start Shop Services Area -->
+        <section class="shop-services section home">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <!-- Start Single Service -->
+                        <div class="single-service">
+                            <i class="ti-rocket"></i>
+                            <h4>Free shipping</h4>
+                            <p>Orders over $100</p>
+                        </div>
+                        <!-- End Single Service -->
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <!-- Start Single Service -->
+                        <div class="single-service">
+                            <i class="ti-reload"></i>
+                            <h4>Free Return</h4>
+                            <p>Within 30 days returns</p>
+                        </div>
+                        <!-- End Single Service -->
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <!-- Start Single Service -->
+                        <div class="single-service">
+                            <i class="ti-lock"></i>
+                            <h4>Secure Payment</h4>
+                            <p>100% secure payment</p>
+                        </div>
+                        <!-- End Single Service -->
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-12">
+                        <!-- Start Single Service -->
+                        <div class="single-service">
+                            <i class="ti-tag"></i>
+                            <h4>Best Price</h4>
+                            <p>Guaranteed price</p>
+                        </div>
+                        <!-- End Single Service -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Shop Services Area -->
+
+        <!-- Start Shop Newsletter  -->
+        <section class="shop-newsletter section">
+            <div class="container">
+                <div class="inner-top">
+                    <div class="row">
+                        <div class="col-lg-8 offset-lg-2 col-12">
+                            <!-- Start Newsletter Inner -->
+                            <div class="inner">
+                                <h4>Newsletter</h4>
+                                <p> Subscribe to our newsletter and get <span>10%</span> off your first purchase</p>
+                                <form action="mail/mail.php" method="get" target="_blank" class="newsletter-inner">
+                                    <input name="EMAIL" placeholder="Your email address" required="" type="email">
+                                    <button class="btn">Subscribe</button>
+                                </form>
+                            </div>
+                            <!-- End Newsletter Inner -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Shop Newsletter -->
+
+    {% endblock %}

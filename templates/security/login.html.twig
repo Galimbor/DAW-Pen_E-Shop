@@ -1,0 +1,78 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Sign-in page{% endblock %}
+
+
+
+{% block body %}
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="bread-inner">
+                        <ul class="bread-list">
+                            <li><a href="{{ path('index') }}">Home<i class="ti-arrow-right"></i></a></li>
+                            <li class="active"><a href="{{ path('app_login') }}">Login</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumbs -->
+    {% if error %}
+        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+
+    <!-- Shop Login -->
+    <section class="shop login section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 offset-lg-3 col-12">
+                    <div class="login-form">
+                        <h2>Login</h2>
+                        <p>Sign-in and treat yourself to some pens!</p>
+                        <!-- Form -->
+                        <form class="form" method="post" action="#">
+                            <input type="hidden" name="_csrf_token"
+                                   value="{{ csrf_token('authenticate') }}">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label>Your Email<span>*</span></label>
+                                        <input type="tex" value="{{ last_username }}" name="email" placeholder="" id="inputEmail">
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label>Your Password<span>*</span></label>
+                                        <input type="password" name="password" placeholder=""  id="inputPassword">
+                                    </div>
+                                </div>
+                                <div class="col-12 justify-content-between" style="display: flex;">
+                                    <div>
+                                        <input type="checkbox" name="_remember_me"  class="">
+                                        <label class="checkbox-inline" for="_remember_me">Remember me</label></div>
+                                    <a href="{{ path('app_forgot_password_request') }}" class="lost-pass">Lost your password?</a>
+                                </div>
+                                <div class="col-12 ">
+                                    <div class="form-group login-btn justify-content-center" style="display: flex;">
+                                        <button class="btn" type="submit">Login</button>
+                                        <a href="register.html" class="btn">Register</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <!--/ End Form -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--/ End Login -->
+
+
+
+
+{% endblock %}

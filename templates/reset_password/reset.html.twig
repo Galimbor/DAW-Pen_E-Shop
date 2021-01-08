@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Reset your password{% endblock %}
+
+{% block body %}
+
+
+
+    <section class="shop login section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 offset-lg-3 col-12">
+                    <div class="login-form">
+                        <h2>Reset your password</h2>
+                        <p>And then you'll be able to treat yourself to some pens!</p>
+                        <!-- Form -->
+                        <div class="form">
+                            {{ form_start(resetForm) }}
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        {{ form_row(resetForm.plainPassword.first,{'attr': {'class': 'form-control'}}) }}
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        {{ form_row(resetForm.plainPassword.second,{'attr': {'class': 'form-control'}}) }}
+                                    </div>
+                                </div>
+                                <div class="col-12 ">
+                                    <div class="form-group login-btn justify-content-center" style="display: flex;">
+                                        <a href="{{ path('index') }}" class="btn">Go back</a>
+                                        <button class="btn" type="submit">Change password</button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {{ form_end(resetForm) }}
+                        <!--/ End Form -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+{% endblock %}

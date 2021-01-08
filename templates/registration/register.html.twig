@@ -1,0 +1,81 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register page{% endblock %}
+
+{% block body %}
+
+    {% for flashError in app.flashes('verify_email_error') %}
+        <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+    {% endfor %}
+
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="bread-inner">
+                        <ul class="bread-list">
+                            <li><a href="{{ path('index') }}">Home<i class="ti-arrow-right"></i></a></li>
+                            <li class="active"><a href="{{ path('app_register') }}">Register</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumbs -->
+
+    <!-- Shop Login -->
+    <section class="shop login section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 offset-lg-3 col-12">
+                    <div class="login-form">
+                        <h2>Register</h2>
+                        <p>Register now and get access to the checkout functionality!</p>
+                        <!-- Form -->
+                        {{ form_start(registrationForm) }}
+                        <div class="form" >
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        {{ form_row(registrationForm.name,{'attr': {'class': 'form-control'}}) }}
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        {{ form_row(registrationForm.email,{'attr': {'class': 'form-control'}}) }}
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        {{ form_row(registrationForm.plainPassword.first,{'attr': {'class': 'form-control'}}) }}
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        {{ form_row(registrationForm.plainPassword.second,{'attr': {'class': 'form-control'}}) }}
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group login-btn justify-content-md-center" style="display: flex;">
+                                        <button class="btn" type="submit">Register</button>
+                                        <button type="reset" class="btn " name="cl">Clear</button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {{ form_end(registrationForm) }}
+                        <!--/ End Form -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--/ End Login -->
+
+
+
+
+{% endblock %}
