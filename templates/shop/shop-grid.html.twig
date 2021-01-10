@@ -35,19 +35,25 @@
 
                                         <button class="btn" onclick="filterSelection('all')">Show all</button>
                                     </li>
+                                    {% for category in categories %}
                                     <li>
 
-                                        <button class="btn" onclick="filterSelection('Parker')">Parker</button>
+                                        <button class="btn" onclick="filterSelection('{{ category.name }}')">{{ category.name }}</button>
                                     </li>
-                                    <li>
-                                        <button class="btn" onclick="filterSelection('Cross')">Cross</button>
-                                    </li>
-                                    <li>
-                                        <button class="btn" onclick="filterSelection('Limy')">Limy</button>
-                                    </li>
-                                    <li>
-                                        <button class="btn" onclick="filterSelection('Kingsfield')">Kingsfield</button>
-                                    </li>
+                                    {% endfor %}
+{#                                    <li>#}
+
+{#                                        <button class="btn" onclick="filterSelection('Parker')">Parker</button>#}
+{#                                    </li>#}
+{#                                    <li>#}
+{#                                        <button class="btn" onclick="filterSelection('Cross')">Cross</button>#}
+{#                                    </li>#}
+{#                                    <li>#}
+{#                                        <button class="btn" onclick="filterSelection('Limy')">Limy</button>#}
+{#                                    </li>#}
+{#                                    <li>#}
+{#                                        <button class="btn" onclick="filterSelection('Kingsfield')">Kingsfield</button>#}
+{#                                    </li>#}
                                 </div>
                             </ul>
                         </div>

@@ -17,8 +17,10 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class StoreController extends AbstractController
 {
-//TODO : fix the active tags in the navbar;
-//TODO : add CRFC tokens in the checkout so that the ADD/DES/ELI only get from there;
+//TODO : fix the active tags in the navbar; | DONE - NO MORE TAGS
+//TODO : add CRFC tokens in the checkout so that the ADD/DES/ELI only get from there; | gravidade = 0..
+//TODO : fix the products filter in the product page, to retrieve the categories from the database | DONE
+//TODO : make the "my orders" page more visible | DONE
 
     private $session;
 
@@ -30,7 +32,7 @@ class StoreController extends AbstractController
 
 
     /**
-     * @Route("/", name="index")
+     * @Route("/eshop", name="index")
      * @param ProductsRepository $productsRepository
      * @param Cart $cart
      * @return Response
@@ -51,12 +53,12 @@ class StoreController extends AbstractController
     }
 
     /**
-     * @Route("/store", name="store")
+     * @Route("/eshop/products", name="store")
      * @param ProductsRepository $productsRepository
      * @param Cart $cart
      * @return Response
      */
-    public function store(ProductsRepository $productsRepository, Cart $cart): Response
+    public function store(ProductsRepository $productsRepository, Cart $cart, CategoriesRepository $categoriesRepository): Response
     {
         //Retrieving the products in the cart
         $chosenProducts = $cart->retrieveCartItems($this->session,$productsRepository);
@@ -64,16 +66,20 @@ class StoreController extends AbstractController
         //Retrieving all the existent items
         $allProducts = $productsRepository->findAll();
 
+        //Retrieving all the existing categories
+        $allCategories = $categoriesRepository->findAll();
+
         //Rendering the products page
         return $this->render('shop/shop-grid.html.twig', [ 'products'=> $allProducts, 'chosenProducts' =>
             $chosenProducts[0], 'totalCartPrice' => $chosenProducts[1], 'totalQuantity' => $chosenProducts[2],
+            'categories' => $allCategories,
         ]);
 
     }
 
 
     /**
-     * @Route("/checkout", name="checkout")
+     * @Route("/eshop/checkout", name="checkout")
      * @return Response
      */
     public function checkout(ProductsRepository $productsRepository, Cart $cart): Response
@@ -91,7 +97,7 @@ class StoreController extends AbstractController
 
 
     /**
-     * @Route("/add_product/{id?}", name="addProduct")
+     * @Route("/eshop/add_product/{id?}", name="addProduct")
      * @param $id
      * @param ProductsRepository $productsRepository
      * @return Response
@@ -128,7 +134,7 @@ class StoreController extends AbstractController
     }
 
     /**
-     * @Route("/placeOrder", name="placeOrder")
+     * @Route("/eshop/placeOrder", name="placeOrder")
      * @param ProductsRepository $productsRepository
      * @param Cart $cart
      * @return Response
@@ -193,7 +199,7 @@ class StoreController extends AbstractController
 
 
     /**
-     * @Route("/myOrders", name="myOrders")
+     * @Route("/eshop/myOrders", name="myOrders")
      * @param ProductsRepository $productsRepository
      * @param OrdersRepository $ordersRepository
      * @param OrderItemsRepository $orderItemsRepository
@@ -237,7 +243,7 @@ class StoreController extends AbstractController
     }
 
     /**
-     * @Route("/decreaseQuantity/{id?}", name="decreaseQuantity")
+     * @Route("/eshop/decreaseQuantity/{id?}", name="decreaseQuantity")
      * @param $id
      * @param ProductsRepository $productsRepository
      * @return Response
@@ -270,7 +276,7 @@ class StoreController extends AbstractController
     }
 
     /**
-     * @Route("/increaseQuantity/{id?}", name="increaseQuantity")
+     * @Route("/eshop/increaseQuantity/{id?}", name="increaseQuantity")
      * @param $id
      * @param ProductsRepository $productsRepository
      * @return Response
@@ -304,7 +310,7 @@ class StoreController extends AbstractController
 
 
     /**
-     * @Route("/eliminateFromCart/{id?}", name="eliminateFromCart")
+     * @Route("/eshop/eliminateFromCart/{id?}", name="eliminateFromCart")
      * @param $id
      * @param ProductsRepository $productsRepository
      * @return Response

@@ -20,9 +20,8 @@
             </div>
         </div>
     </div>
-    <!-- End Breadcrumbs -->
     {% if error %}
-        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+        <div class=" m-3 text-center w-75 mx-auto alert-danger py-2">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}
 
     <!-- Shop Login -->

@@ -3592,7 +3592,7 @@ Version:1.0
 	font-size: 13px;
 	border-radius: 30px;
 	height: auto;
-	line-height: a;
+	/*line-height: ;*/
 	padding: 13px 32px;
 }
 .shop-list .list-content .btn:hover{
@@ -4761,7 +4761,7 @@ Version:1.0
 	font-size: 30px;
 }
 .mail-success .mail-inner p {
-	font-size: 14;
+	font-size: 14px;
 	color: #333;
 	margin-bottom: 30px;
 	line-height: 22px;
@@ -4965,5 +4965,13 @@ Version:1.0
 	border: none;
 	font-size: 12px;
 }
+
+.error-message {
+	color: #cc0033;
+	display: inline-block;
+	font-size: 13px;
+	line-height: 15px;
+	margin: 5px 0 0;
+	padding: 0 5px;
 
 }

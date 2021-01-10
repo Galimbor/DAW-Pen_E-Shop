@@ -209,19 +209,30 @@
                                         <ul class="nav main-menu menu navbar-nav ">
                                             <!--												active state needs to be dynamic-->
                                             <li class=" mr-5"><a href="{{ path('index') }}">Home</a></li>
-                                            <li class=" active mr-5"><a href="#">Shop<i class="ti-angle-down"></i><span
-                                                            class="new">New</span></a>
-                                                <ul class="dropdown">
-                                                    <li><a href="{{ path('store') }}">Our products</a></li>
-                                                    <li><a href="{{ path('checkout') }}">Checkout</a></li>
-                                                    {% if app.user %}
-                                                        <li><a href="{{ path('myOrders') }}">My orders</a>
-                                                        </li> {% endif %}
-                                                </ul>
+{#                                            <li class=" active mr-5"><a href="#">Shop<i class="ti-angle-down"></i><span#}
+{#                                                            class="new">New</span></a>#}
+{#                                                <ul class="dropdown">#}
+{#                                                    <li><a href="{{ path('store') }}">Our products</a></li>#}
+{#                                                    <li><a href="{{ path('checkout') }}">Checkout</a></li>#}
+{#                                                    {% if app.user %}#}
+{#                                                        <li>#}
+{#                                                            <a href="{{ path('myOrders') }}">My orders</a>#}
+{#                                                        </li> #}
+{#                                                    {% endif %}#}
+{#                                                </ul>#}
+{#                                            </li>#}
+                                            <li class="mr-5">
+                                                <a href="{{ path('store') }}">Our products</a>
                                             </li>
                                             <li class="mr-5">
-                                                <a href="$"> Customer Reviews</a>
+                                                <a href="{{ path('checkout') }}">Checkout</a>
                                             </li>
+                                            {% if app.user %}
+                                                <li class="mr-5">
+                                                    <a href="{{ path('myOrders') }}">My orders</a>
+                                                </li>
+                                            {% endif %}
+
                                             <li class="mr-5"><a href="#">Blog<i class="ti-angle-down"></i></a>
                                                 <ul class="dropdown">
                                                     <li><a href="http://daw.deei.fct.ualg.pt/~a64592/LAB9_10/public/">A friendly blog</a></li>
