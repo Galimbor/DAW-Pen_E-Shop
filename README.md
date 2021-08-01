@@ -2,7 +2,7 @@
 
 ## Description
 
-This project is an e-shop that sells luxury, with registration and login services implemented, alongside with a cart functionality. Developed using Symphony, pure Javascript and Bootstrap. 
+This project is an e-shop that sells luxury pens, with registration and login services implemented, alongside with a cart functionality. Developed using Symphony, pure Javascript and Bootstrap. 
 
 
 ### How to start working on the project
